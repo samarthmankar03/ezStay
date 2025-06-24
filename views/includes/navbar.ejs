@@ -1,0 +1,39 @@
+
+<nav class="navbar navbar-expand-md bg-body border-bottom sticky-top mb-4">
+  <div class="container-fluid">
+    <a class="nav-link-logo" aria-current="page" href="/"><i class="fa-regular fa-compass"></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <div class="explore"><a class="nav-link explore-link" href="/listings">Explore</a></div>
+        <div class="trending"><a class="nav-link trending-link" href="/listings">Trending</a></div>
+      </div>
+        <div class="search-box">
+          <form class="d-flex" role="search">
+            <input class="form-control me-2 search-inp" type="search" placeholder="Search" aria-label="Search"/>
+            <button class="btn btn-outline-success search-btn" type="submit">Search</button>
+          </form>
+        </div>
+    </div>
+    
+    
+    <% if(currUser){ %>
+    <div class="navbar-nav">
+        <div class="host">
+          <div class="host"><a class="nav-link host-link" href="/listings/new">Become a host</a></div>
+        </div>
+        <div class="logout"><a class="nav-link" href="/logout">Logout</a></div>
+      </div>
+    <% } else { %>
+    <div class="navbar-nav">
+        <div class="host">
+          <div class="host"><a class="nav-link host-link" href="/listings/new">Become a host</a></div>
+        </div>
+        <div class="signup"><a class="nav-link signup-link" href="/signup">Sign Up</a></div>
+        <div class="login"><a class="nav-link" href="/login">Login</a></div>
+      </div>
+    <% } %>
+  </div>
+</nav>
